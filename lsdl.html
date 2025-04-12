@@ -12,9 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <title>Chain App Dev - App Landing Page HTML5 Template</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>CTĐP - Study to easy</title>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -62,10 +61,22 @@ https://templatemo.com/tm-570-chain-app-dev
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="lsdl.html">Lịch sử và địa lí</a></li>
+              <li class="scroll-to-section"><a href="index.html">Home</a></li>
+              <li class="scroll-to-section submenu"><a href="#" class="active">Lịch Sử Và Địa Lí&nbsp;<i class="fa fa-angle-right"></i></a>
+
+                <ul>
+                  <li><a href="#sinh-thai">Lịch sử</a></li>
+                  <li><a href="#di-tich">Địa lí</a></li>
+                </ul>
+              </li>
               <li class="scroll-to-section"><a href="#about">Văn học</a></li>
-              <li class="scroll-to-section"><a href="#about">Nghệ thuật</a></li>
+              <li class="scroll-to-section submenu"><a>Nghệ thuật&nbsp;<i class="fa fa-angle-right"></i></a>
+                <ul>
+                  <li><a href="#sinh-thai">Âm nhạc</a></li>
+                  <li><a href="#di-tich">Mĩ thuật</a></li>
+                  <li><a href="#giai-tri">Tín ngưỡng</a></li>
+                </ul>
+              </li>
               <li class="scroll-to-section"><a href="#services">Khác</a></li>
               <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li> 
             </ul>        
@@ -296,5 +307,28 @@ https://templatemo.com/tm-570-chain-app-dev
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const submenuParents = document.querySelectorAll(".main-nav .nav li.submenu > a");
+  
+      submenuParents.forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const parentLi = this.parentElement;
+          parentLi.classList.toggle("active");
+  
+          // Tùy chọn: Đóng các submenu khác nếu chỉ muốn mở 1 cái
+          document.querySelectorAll(".main-nav .nav li.submenu").forEach(item => {
+            if (item !== parentLi) {
+              item.classList.remove("active");
+            }
+          });
+        });
+      });
+    });
+
+  </script>
+  
+  
 </body>
 </html>

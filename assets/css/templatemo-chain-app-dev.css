@@ -448,7 +448,6 @@ header
 
 .header-area .main-nav .nav li.submenu:after {
   font-family: FontAwesome;
-  content: "\f107";
   font-size: 12px;
   color: #2a2a2a;
   position: absolute;
@@ -646,6 +645,7 @@ header
   position: relative;
 }
 
+/* Ẩn mặc định submenu */
 .header-area .main-nav .nav li.submenu ul {
   position: absolute;
   top: 100%;
@@ -661,7 +661,6 @@ header
   list-style: none;
   padding: 0;
 }
-
 .header-area .main-nav .nav li.submenu.active ul {
   visibility: visible;
   opacity: 1;
@@ -679,23 +678,20 @@ header
   .header-area .main-nav:before {
     display: none;
   }
+  .header-area .main-nav .nav li.submenu:hover ul {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
+
 
 @media (max-width: 992px) {
-  .header-area .main-nav .nav li:last-child  ,
-  .background-header .main-nav .nav li:last-child {
-    color: #069;
+  body {
+    background-image: url('https://imgur.com/kcuPfiz');
+    background-size: cover; /* Đảm bảo hình nền phủ kín toàn bộ trang */
+    background-position: center center; /* Căn giữa hình nền */
   }
-  .header-area .main-nav .nav li:nth-child(6),
-  .background-header .main-nav .nav li:nth-child(6) {
-    padding-right: 0px;
-  }
-  .background-header .nav li a.active:after {
-    display: none;
-  }
-}
-
-@media (max-width: 767px) {
   .pre-header ul.info li:last-child,
   .pre-header ul.info li:nth-child(6) {
     display: none!important;
@@ -772,36 +768,55 @@ header
     background: #eee !important;
     color: #4b8ef1!important;
   }
+  .header-area .main-nav .nav li.submenu {
+    position: relative;
+  }
+  
+  /* Mặc định ẩn submenu */
   .header-area .main-nav .nav li.submenu ul {
     position: relative;
-    visibility: inherit;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    visibility: visible;
     opacity: 1;
     z-index: 1;
-    transform: translateY(0%);
-    transition-delay: 0s, 0s, 0.3s;
-    top: 0px;
     width: 100%;
     box-shadow: none;
-    height: 0px;
+    padding: 0;
+    background: #fff;
+    list-style: none;
   }
+  
+  /* Khi submenu mở (được click) */
+  .header-area .main-nav .nav li.submenu.active ul {
+    max-height: 500px; /* Điều chỉnh nếu cần */
+  }
+  
+  /* Các liên kết trong submenu */
   .header-area .main-nav .nav li.submenu ul li a {
     font-size: 12px;
     font-weight: 400;
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
   }
+  
+  /* Hiệu ứng khi hover vào item con */
   .header-area .main-nav .nav li.submenu ul li a:hover:before {
-    width: 0px;
+    width: 0;
   }
-  .header-area .main-nav .nav li.submenu ul.active {
-    height: auto !important;
-  }
+  
+  /* Biểu tượng mũi tên submenu (nếu dùng) */
   .header-area .main-nav .nav li.submenu:after {
+    content: "\25B6"; /* Mã mũi tên hoặc dùng font-awesome */
     color: #3B566E;
-    right: 25px;
-    font-size: 14px;
+    position: absolute;
+    right: 15px;
     top: 15px;
-  }
-  .header-area .main-nav .nav li.submenu:hover ul, .header-area .main-nav .nav li.submenu:focus ul {
-    height: 0px;
+    font-size: 14px;
+    pointer-events: none;
   }
 }
 
@@ -1669,7 +1684,7 @@ footer #search button:hover {
 }
 
 .footer-widget p {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .footer-widget p,
