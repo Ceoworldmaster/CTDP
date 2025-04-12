@@ -25,22 +25,14 @@ Website cung cấp các tính năng như:
 
 ---
 
-## ⚙️ Cách cài đặt
-
-```bash
-git clone https://github.com/ten-cua-ban/du-an.git
-cd du-an
-npm install
-npm start
-
-🚀 Cách sử dụng
+## 🚀 Cách sử dụng
 Truy cập vào trình duyệt.
 
 Nhập localhost:3000 (hoặc theo port bạn chọn).
 
 Duyệt các chức năng chính như tìm kiếm, xem bản đồ, nghe giới thiệu, v.v.
 
-👨‍👩‍👧‍👦 Thành viên nhóm
+## 👨‍👩‍👧‍👦 Thành viên nhóm
 Nguyễn Dương
 
 Trần Phước
@@ -53,7 +45,7 @@ Bùi Thạc
 
 Võ Trung
 
-Tên nhóm: 🎉 BP6 - Bình Phước Fantastic 6
+## Tên nhóm: 🎉 BP6 - Bình Phước Fantastic 6
 
 📬 Liên hệ
 GitHub: github.com/ten-cua-ban
