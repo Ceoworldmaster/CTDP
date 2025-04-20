@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+        <title>CTĐP - Study become easy</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--
+
+        TemplateMo 570 CTĐP - Study become easy
+
+        https://templatemo.com/tm-570-chain-app-dev
+
+        -->
+
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+        <link rel="stylesheet" href="assets/css/animated.css">
+        <link rel="stylesheet" href="assets/css/owl.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="amnhac.css" rel="stylesheet">
+    
+    </head>
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo.png" alt="CTĐP - Study become easy">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="index.html"><i class="fa-solid fa-house"></i>&nbsp;Home</a></li>
+              <li class="scroll-to-section submenu"><a><i class="fa-solid fa-hourglass-half"></i>&nbsp;Lịch Sử Và Địa Lí</a>
+                <ul>
+                  <li><a href="lichsu.html"><i class="fa-solid fa-landmark"></i>&nbsp;Lịch sử</a></li>
+                  <li><a href="diali.html"><i class="fa-solid fa-mountain-sun"></i>&nbsp;Địa lí</a></li>
+                </ul>
+              </li>
+              <li class="scroll-to-section"><a href="vanhoc.html" class="active"><i class="fa-solid fa-book-bookmark"></i>&nbsp;Văn học</a></li>
+              <li class="scroll-to-section submenu"><a><i class="fa-solid fa-fire"></i>&nbsp;Nghệ thuật</a>
+                <ul>
+                  <li><a href="amnhac.html"><i class="fa-solid fa-music"></i>&nbsp;Âm nhạc</a></li>
+                  <li><a href="mithuat.html"><i class="fa-solid fa-palette"></i>&nbsp;Mĩ thuật</a></li>
+                  <li><a href="tinnguong.html"><i class="fa-solid fa-masks-theater"></i>&nbsp;Tín ngưỡng</a></li>
+                </ul>
+              </li>
+              <li class="scroll-to-section submenu"><a><i class="fa-solid fa-feather-pointed"></i>&nbsp;Khác</a>
+                <ul>
+                    <li><a href="trainghiem.html"><i class="fa-solid fa-earth-americas"></i>&nbsp;Trải nghiệm</a></li>
+                    <li><a href="amthuc.html"><i class="fa-solid fa-utensils"></i>&nbsp;Ẩm thực</a></li>
+                    <li><a href="kiemtra.html"><i class="fa-solid fa-rocket"></i>&nbsp;Boots Kiểm tra</a></li>
+                  </ul>
+            </li>
+              <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  
+  <div id="modal" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
+        <span class="header_title">Login</span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+
+    <section class="popupBody">
+        <!-- Social Login -->
+        <div class="social_login">
+            <div class="">
+                <a href="#" class="social_box fb">
+                    <span class="icon"><i class="fab fa-facebook"></i></span>
+                    <span class="icon_title">Connect with Facebook</span>
+
+                </a>
+
+                <a href="#" class="social_box google">
+                    <span class="icon"><i class="fab fa-google-plus"></i></span>
+                    <span class="icon_title">Connect with Google</span>
+                </a>
+            </div>
+
+            <div class="centeredText">
+                <span>Or use your Email address</span>
+            </div>
+
+            <div class="action_btns">
+                <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
+                <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+            </div>
+        </div>
+
+        <!-- Username & Password Login form -->
+        <div class="user_login">
+            <form>
+                <label>Email / Username</label>
+                <input type="text" />
+                <br />
+
+                <label>Password</label>
+                <input type="password" />
+                <br />
+
+                <div class="checkbox">
+                    <input id="remember" type="checkbox" />
+                    <label for="remember">Remember me on this computer</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
+                </div>
+            </form>
+
+            <a href="#" class="forgot_password">Forgot password?</a>
+        </div>
+
+        <!-- Register Form -->
+        <div class="user_register">
+            <form>
+                <label>Full Name</label>
+                <input type="text" />
+                <br />
+
+                <label>Email Address</label>
+                <input type="email" />
+                <br />
+
+                <label>Password</label>
+                <input type="password" />
+                <br />
+
+                <div class="checkbox">
+                    <input id="send_updates" type="checkbox" />
+                    <label for="send_updates">Send me occasional email updates</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+  <div class="main-banner wow fadeIn" id="" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>Phần Văn học</h2>
+                    <p>Văn học Bình Phước phản ánh chân thực vẻ đẹp thiên nhiên và con người nơi đây, gắn liền với hình ảnh vùng đất bazan trù phú. Các tác phẩm thường khắc họa cuộc sống lao động, chiến đấu và những giá trị văn hóa truyền thống của người dân miền Đông Nam Bộ. Dù còn non trẻ, nền văn học này đang từng bước khẳng định vị trí trong dòng chảy văn học cả nước.</p>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="white-button first-button scroll-to-section">
+                      <a href="https://ceoworldmaster.github.io/BPF-Tour/">BPF-Tour<i class="fa-solid fa-globe"></i></a>
+                    </div>
+                    <div class="white-button scroll-to-section">
+                      <a href="info.html">Information <i class="fa-solid fa-circle-info"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="assets/images/slider-dec.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRÌNH PHÁT NHẠC CHÍNH -->
+  <div class="player">
+    <div class="wrapper">
+      <div class="details">
+        <div class="track-art" id="track-art"></div>
+        <div class="now-playing">Đang phát: <span id="track-index">1</span> / <span id="total-tracks">3</span></div>
+        <div class="track-name" id="track-name">Tên bài hát</div>
+        <div class="track-artist" id="track-artist">Ca sĩ</div>
+      </div>
+
+      <div class="buttons">
+        <div class="random-track" onclick="randomTrack()"><i class="fas fa-random"></i></div>
+        <div class="prev-track" onclick="prevTrack()"><i class="fas fa-step-backward"></i></div>
+        <div class="playpause-track" onclick="playpauseTrack()"><i class="fas fa-play-circle" id="play-icon"></i></div>
+        <div class="next-track" onclick="nextTrack()"><i class="fas fa-step-forward"></i></div>
+        <div class="repeat-track" onclick="repeatTrack()"><i class="fas fa-redo-alt"></i></div>
+      </div>
+
+      <div class="slider_container">
+        <span id="current-time">0:00</span>
+        <input type="range" id="seek_slider" min="0" max="100" value="0" onchange="seekTo()"/>
+        <span id="total-duration">0:00</span>
+      </div>
+
+      <div class="slider_container">
+        <i class="fas fa-volume-down"></i>
+        <input type="range" id="volume_slider" min="0" max="100" value="100" onchange="setVolume()"/>
+        <i class="fas fa-volume-up"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- DANH SÁCH BÀI HÁT -->
+  <div class="song-list">
+    <div class="song-card" onclick="selectTrack(0)">
+      <img src="https://i.imgur.com/N9Z1b8B.png" alt="Ảnh bài hát" class="song-image">
+      <div class="song-info">
+        <h3>Vì Anh Đâu Có Biết</h3>
+        <p><strong>Tác giả:</strong> Madihu</p>
+        <p><strong>Ý nghĩa:</strong> Ca khúc về nỗi nhớ và sự hối tiếc trong tình yêu.</p>
+        <button class="toggle-lyrics">🎵 Xem lời bài hát</button>
+        <div class="lyrics-box hidden">
+          <p>Vì anh đâu có biết trái tim em đang đau từng phút giây dài...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="selectTrack(1)">
+      <img src="https://i.imgur.com/N9Z1b8B.png" alt="Ảnh bài hát" class="song-image">
+      <div class="song-info">
+        <h3>Vì Anh Đâu Có Biết</h3>
+        <p><strong>Ý nghĩa:</strong> Ca khúc về nỗi nhớ và sự hối tiếc trong tình yêu.</p>
+        <button class="toggle-lyrics">🎵 Xem lời bài hát</button>
+        <div class="lyrics-box hidden">
+          <p>Vì anh đâu có biết trái tim em đang đau từng phút giây dài...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-card" onclick="selectTrack(2)">
+      <img src="https://i.imgur.com/N9Z1b8B.png" alt="Ảnh bài hát" class="song-image">
+      <div class="song-info">
+        <h3>Vì Anh Đâu Có Biết</h3>
+        <p><strong>Ý nghĩa:</strong> Ca khúc về nỗi nhớ và sự hối tiếc trong tình yêu.</p>
+        <button class="toggle-lyrics">🎵 Xem lời bài hát</button>
+        <div class="lyrics-box hidden">
+          <p>Vì anh đâu có biết trái tim em đang đau từng phút giây dài...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUDIO ẨN -->
+  <audio id="audio"></audio>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const trackArt = document.getElementById('track-art');
+    const trackName = document.getElementById('track-name');
+    const trackArtist = document.getElementById('track-artist');
+    const seekSlider = document.getElementById('seek_slider');
+    const volumeSlider = document.getElementById('volume_slider');
+    const currentTimeDisplay = document.getElementById('current-time');
+    const totalDurationDisplay = document.getElementById('total-duration');
+    const playIcon = document.getElementById('play-icon');
+    const trackIndexDisplay = document.getElementById('track-index');
+    const totalTracks = document.getElementById('total-tracks');
+
+    const trackList = [
+      {
+        name: 'Bài hát 1',
+        artist: 'Ca sĩ A',
+        path: 'song1.mp3',
+        image: 'https://via.placeholder.com/200'
+      },
+      {
+        name: 'Bài hát 2',
+        artist: 'Ca sĩ B',
+        path: 'song2.mp3',
+        image: 'https://via.placeholder.com/200/007bff'
+      },
+      {
+        name: 'Bài hát 3',
+        artist: 'Ca sĩ C',
+        path: 'song3.mp3',
+        image: 'https://via.placeholder.com/200/28a745'
+      }
+    ];
+
+    let trackIndex = 0;
+    let isPlaying = false;
+    let isRandom = false;
+    let isRepeat = false;
+    let updateTimer;
+
+    function loadTrack(index) {
+      clearInterval(updateTimer);
+      resetValues();
+
+      const track = trackList[index];
+      audio.src = track.path;
+      trackArt.style.backgroundImage = `url('${track.image}')`;
+      trackName.textContent = track.name;
+      trackArtist.textContent = track.artist;
+      trackIndexDisplay.textContent = index + 1;
+      totalTracks.textContent = trackList.length;
+
+      updateTimer = setInterval(seekUpdate, 1000);
+      audio.addEventListener('ended', nextTrack);
+    }
+
+    function resetValues() {
+      currentTimeDisplay.textContent = '0:00';
+      totalDurationDisplay.textContent = '0:00';
+      seekSlider.value = 0;
+    }
+
+    function playTrack() {
+      audio.play();
+      isPlaying = true;
+      playIcon.classList.remove('fa-play-circle');
+      playIcon.classList.add('fa-pause-circle');
+    }
+
+    function pauseTrack() {
+      audio.pause();
+      isPlaying = false;
+      playIcon.classList.remove('fa-pause-circle');
+      playIcon.classList.add('fa-play-circle');
+    }
+
+    function playpauseTrack() {
+      isPlaying ? pauseTrack() : playTrack();
+    }
+
+    function nextTrack() {
+      if (isRandom) {
+        trackIndex = Math.floor(Math.random() * trackList.length);
+      } else {
+        trackIndex = (trackIndex + 1) % trackList.length;
+      }
+      loadTrack(trackIndex);
+      playTrack();
+    }
+
+    function prevTrack() {
+      trackIndex = (trackIndex - 1 + trackList.length) % trackList.length;
+      loadTrack(trackIndex);
+      playTrack();
+    }
+
+    function repeatTrack() {
+      isRepeat = !isRepeat;
+      audio.loop = isRepeat;
+      alert(isRepeat ? 'Lặp lại: BẬT' : 'Lặp lại: TẮT');
+    }
+
+    function randomTrack() {
+      isRandom = !isRandom;
+      alert(isRandom ? 'Ngẫu nhiên: BẬT' : 'Ngẫu nhiên: TẮT');
+    }
+
+    function seekTo() {
+      let seekto = audio.duration * (seekSlider.value / 100);
+      audio.currentTime = seekto;
+    }
+
+    function setVolume() {
+      audio.volume = volumeSlider.value / 100;
+    }
+
+    function seekUpdate() {
+      if (!isNaN(audio.duration)) {
+        let seekPosition = (audio.currentTime / audio.duration) * 100;
+        seekSlider.value = seekPosition;
+
+        let curMinutes = Math.floor(audio.currentTime / 60);
+        let curSeconds = Math.floor(audio.currentTime % 60);
+        let durMinutes = Math.floor(audio.duration / 60);
+        let durSeconds = Math.floor(audio.duration % 60);
+
+        if (curSeconds < 10) curSeconds = "0" + curSeconds;
+        if (durSeconds < 10) durSeconds = "0" + durSeconds;
+        if (curMinutes < 10) curMinutes = "0" + curMinutes;
+        if (durMinutes < 10) durMinutes = "0" + durMinutes;
+
+        currentTimeDisplay.textContent = `${curMinutes}:${curSeconds}`;
+        totalDurationDisplay.textContent = `${durMinutes}:${durSeconds}`;
+      }
+    }
+
+    function selectTrack(index) {
+      trackIndex = index;
+      loadTrack(trackIndex);
+      playTrack();
+    }
+
+    // Tải track đầu tiên khi mở trang
+    loadTrack(trackIndex);
+    
+    document.querySelectorAll('.toggle-lyrics').forEach(button => {
+      button.addEventListener('click', function () {
+        const lyricsBox = this.nextElementSibling;
+        lyricsBox.classList.toggle('hidden');
+        this.textContent = lyricsBox.classList.contains('hidden') ? '🎵 Xem lời bài hát' : '❌ Ẩn lời bài hát';
+      });
+    });
+  </script>
+
+
+  <footer id="newsletter">
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="section-heading">
+            <h4>Xin trân trọng cảm ơn. </br> Hãy ủng hộ &amp; ghi lại dấu ấn của bạn tại đây:</h4>
+            </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+            <form id="search" action="#" method="GET">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                    <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required>
+                </fieldset>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                    <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
+                </fieldset>
+                </div>
+            </div>
+            </form>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-3">
+            <div class="footer-widget">
+            <h4>Contact Us</h4>
+            <p>GVHD: Nguyễn Thị Vương</p>
+            <p>Trưởng nhóm: Nguyễn Hồng Dương</p>
+            <p>Thành viên: Đào Trần Thành Phước</p>
+            <p>Thành viên: Đặng Nguyên Phương</p>
+            <p>Thành viên: Phan Hải Hoàng Sơn</p>
+            <p>Thành viên: Nguyễn Thạc</p>
+            <p>Thành viên: Hồ Quốc Trung</p>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="footer-widget">
+            <h4>About Us</h4>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>&nbsp;Home</a></li>
+                <li><a href="lichsu.html"><i class="fa-solid fa-landmark"></i>&nbsp;Lịch sử</a></li>
+                <li><a href="diali.html"><i class="fa-solid fa-mountain-sun"></i>&nbsp;Địa lí</a></li>
+                <li><a href="vanhoc.html"><i class="fa-solid fa-book-bookmark"></i>&nbsp;Văn học</a></li>
+                <li><a href="tinnguong.html"><i class="fa-solid fa-masks-theater"></i>&nbsp;Tín ngưỡng</a></li>
+                
+            </ul>
+            <ul>
+                <li><a href="amnhac.html"><i class="fa-solid fa-music"></i>&nbsp;Âm Nhạc</a></li>
+                <li><a href="mithuat.html"><i class="fa-solid fa-palette"></i>&nbsp;Mĩ thuật</a></li>
+                <li><a href="trainghiem.html"><i class="fa-solid fa-earth-americas"></i>&nbsp;Trải nghiệm</a></li>
+                <li><a href="amthuc.html"><i class="fa-solid fa-utensils"></i>&nbsp;Ẩm thực</a></li>
+                <li><a href="info.html"><i class="fa-solid fa-circle-info"></i>&nbsp;Information</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="footer-widget">
+            <h4>Useful Links</h4>
+            <ul>
+                <li><a href="#">Tài liệu lớp 6</a></li>
+                <li><a href="#">Tài liệu lớp 7</a></li>
+                <li><a href="#">Tài liệu lớp 8</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Tài liệu lớp 9</a></li>
+                <li><a href="#">Tài liệu lớp 10</a></li>
+                <li><a href="#">Tài liệu lớp 11</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="footer-widget">
+            <h4>About Our Project</h4>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="">
+            </div>
+            <p>Sản phẩm là tâm huyết cuối cấp của chúng tôi giúp cho các bạn học sinh dễ dàng học tập môn Chương trình đại phương tỉnh Bình Phước hơn. Hy vọng sản phẩm sẽ đem lại trải nghiệm và giúp ích tốt cho các bạn.</p>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="copyright-text">
+            <p>Copyright © 2025 Sản phẩm phục vụ mục đích học tập. All Rights Reserved. 
+            <br>Cre:<a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p>
+            </div>
+        </div>
+        </div>
+    </div>
+</footer>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/imagesloaded.js"></script>
+<script src="assets/js/popup.js"></script>
+<script src="assets/js/custom.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const submenuItems = document.querySelectorAll(".main-nav .nav li.submenu > a");
+  
+      submenuItems.forEach(item => {
+        item.addEventListener("click", function (e) {
+          if (window.innerWidth <= 991) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            parent.classList.toggle("active");
+  
+            // Đóng các submenu khác
+            document.querySelectorAll(".main-nav .nav li.submenu").forEach(other => {
+              if (other !== parent) {
+                other.classList.remove("active");
+              }
+            });
+          }
+        });
+      });
+    });
+  </script>
+</html>

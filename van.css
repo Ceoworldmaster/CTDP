@@ -1,0 +1,289 @@
+.van-container {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: calc(25% - 20px); /* 4 thẻ mỗi hàng, trừ đi khoảng cách */
+    min-width: 280px; /* Giữ thẻ không quá nhỏ */
+    margin: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Tablet: 2 thẻ mỗi hàng */
+@media (max-width: 1024px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+}
+
+/* Mobile: 1 thẻ mỗi hàng */
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+.thumb {
+    position: relative;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+
+.label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.label-purple {
+    background-color: #a65ad9;
+}
+
+.label-pink {
+    background-color: #de5b9d;
+}
+
+.label-red {
+    background-color: #ff0000;
+}
+
+.label-green {
+    background-color: darkgreen;
+}
+
+.label-blue {
+    background-color: rgb(0, 49, 209);
+}
+
+.info {
+    padding: 15px;
+}
+
+.info h3 {
+    font-size: 16px;
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.meta {
+    font-size: 13px;
+    color: #888;
+}
+/* Modal */
+/* Modal với tiền tố van- */
+.van-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Nội dung modal với tiền tố van- */
+.van-modal-content {
+    background-color: white;
+    margin: 5vh auto;
+    padding: 16px;
+    width: 90vw;
+    height: 90vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    position: relative; /* Để có thể sử dụng position: absolute cho h2 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Header của modal với tiền tố van- */
+.van-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px; /* Thay đổi padding để tạo không gian hợp lý */
+    border-bottom: 2px solid #bdc3c7;
+    background-color: #f9f9f9; /* Thêm màu nền nhẹ cho header */
+    border-radius: 8px 8px 0 0; /* Làm mềm các góc trên */
+}
+
+.van-modal-header h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 20px; /* Giảm kích thước font */
+    font-weight: 600; /* Thay đổi độ đậm của font */
+}
+
+.van-close {
+    font-size: 24px; /* Giảm kích thước nút đóng */
+    cursor: pointer;
+    transition: color 0.3s; /* Thêm hiệu ứng chuyển màu */
+}
+
+.van-close:hover {
+    color: #ff0000; /* Màu khi hover */
+}
+
+/* Nội dung modal với tiền tố van- */
+.van-modal-body {
+    overflow-y: auto;
+    height: calc(100% - 50px); /* Đảm bảo nội dung không vượt quá kích thước modal */
+    padding: 10px 0;
+}
+
+/* Ảnh trong modal với tiền tố van- */
+.van-modal-content img {
+    max-width: 25%;  /* Giới hạn chiều rộng ảnh còn 70% */
+    height: auto;    /* Đảm bảo chiều cao tự động thay đổi để giữ tỷ lệ ảnh */
+    margin: 0 auto 16px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Audio player với tiền tố van- */
+.van-audio-player {
+    width: 80%;  /* Giới hạn chiều rộng của audio */
+    margin: 0 auto 16px auto;  /* Căn giữa phần audio */
+    display: block;  /* Đảm bảo audio là phần tử block */
+    border-radius: 8px;  /* Làm mềm các góc của audio */
+    background-color: #f0f0f0;  /* Thêm màu nền nhẹ để đẹp hơn */
+    padding: 5px;  /* Thêm padding để phần tử trông dễ chịu hơn */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Thêm bóng cho phần tử */
+    position: relative;  /* Để có thể sử dụng các thuộc tính khác nếu cần */
+    overflow: hidden;  /* Đảm bảo không có phần tử nào tràn ra ngoài */
+}
+
+.van-audio-player::-webkit-media-controls {
+    border-radius: 8px;  /* Cải thiện giao diện điều khiển trên webkit */
+}
+
+/* Tùy chọn thêm cho các phần tử con bên trong audio */
+.van-audio-player audio {
+    width: 100%;  /* Đảm bảo audio chiếm toàn bộ chiều rộng của phần tử cha */
+    border-radius: 8px;  /* Làm mềm các góc của audio */
+    outline: none;  /* Bỏ viền khi có focus */
+}
+
+/* Nội dung văn bản và phân tích với tiền tố van- */
+.van-scroll-box, .van-analysis {
+    padding: 12px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.van-analysis {
+    background-color: #eaf6ff;
+    border-left: 4px solid #3498db;
+}
+
+.van-scroll-box {
+    max-height: 160px;
+    overflow-y: auto;
+    border-left: 4px solid #007bff;
+}
+
+.van-analysis h4 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Analysis Content */
+.van-analysis p {
+    margin-bottom: 15px;
+}
+
+/* Table Styling */
+.van-analysis table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.van-analysis table, th, td {
+    border: 1px solid #ddd;
+}
+
+.van-analysis th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.van-analysis th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.van-analysis td {
+    background-color: #fafafa;
+}
+
+/* Hover effect for table rows */
+.van-analysis tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive cải tiến cho điện thoại */
+@media (max-width: 600px) {
+    .van-modal-content {
+        padding: 14px;
+        width: 94vw;
+        height: 92vh;
+        border-radius: 10px;
+    }
+
+    .van-modal-header h2 {
+        font-size: 18px;
+    }
+
+    .van-close {
+        font-size: 24px;
+    }
+
+    .van-scroll-box,
+    .van-analysis {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+#van-custom-modal-text p,
+#van-custom-modal-analysis p {
+    color: black; /* Đặt màu chữ thành đen */
+}

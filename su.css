@@ -1,0 +1,249 @@
+
+  .title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #333;
+  }
+  
+  .timeline-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    height: 95vh; /* Chiều cao của thẻ chứa */
+    background-color: #fff; /* Màu nền cho container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.219); /* Thêm bóng cho thẻ chứa */
+    border-radius: 10px; /* Bo tròn góc cho thẻ chứa */
+    position: relative;
+    overflow-y: auto; /* Thêm thanh cuộn dọc */
+    padding-top: 10px; /* Dành không gian cho thanh tìm kiếm */
+    border: 1px solidrgba(121, 121, 121, 0.637)f ;
+  }
+  
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+  
+  }
+  
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #ccc;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Đảm bảo thanh này không bị che bởi các phần tử khác */
+  }
+  
+  
+  .timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+  }
+  
+  .timeline-item.left {
+    left: 0;
+    text-align: right;
+    top: 5%;
+  }
+  
+  .timeline-item.right {
+    left: 50%;
+    text-align: left;
+  }
+  
+  .timeline-item .content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+  }
+  .timeline-item.left .circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: #555;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0;
+        position: absolute;
+        left: 108%; /* Căn giữa theo chiều ngang */
+        transform: translateX(-50%); /* Đảm bảo nút tròn nằm chính giữa theo chiều ngang */
+        top: 15%; /* Di chuyển lên trên để căn giữa theo chiều dọc */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+        text-align: center;
+    }
+  
+    .timeline-item.right .circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: #555;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0;
+        position: absolute;
+        right: 94%; /* Căn giữa theo chiều ngang */
+        transform: translateX(-50%); /* Đảm bảo nút tròn nằm chính giữa theo chiều ngang */
+        top: 15%; /* Di chuyển lên trên để căn giữa theo chiều dọc */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+        text-align: center;
+  }
+  
+  
+  .timeline-item.left .content {
+    margin-left: auto;
+    margin-top: 10px;
+    border: 1px dashed black;
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-item.left .content:hover {
+    border:1px solid #007bff;/* viền xanh khi hover */
+    background-color: #f0f8ff; /* nền xanh nhạt khi hover */
+  }
+  
+  .timeline-item.right .content {
+    margin-right: auto;
+    border: 0.5px dashed rgb(155, 155, 155);
+  }
+  .timeline-item.right .content:hover {
+    border:1px solid #007bff; /* viền xanh khi hover */
+    background-color: #f0f8ff; /* nền xanh nhạt khi hover */
+  }
+  .timeline-item h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .timeline-item.left p {
+    font-size: 15px;
+    color: #000000;
+    text-align: left;
+  }
+  .timeline-item.right p {
+    font-size: 15px;
+    color: #000000;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 1024px) {
+    .timeline-item.left .circle{
+        left: 110%;
+    }
+    .timeline-item.right .circle{
+        right: 93%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .timeline-item.left .circle{
+        left: 113%;
+    }
+    .timeline-item.right .circle{
+        right: 90%;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .timeline::after {
+      left: 8%;
+    }
+  
+    .timeline-item {
+      width: 100%;
+      padding-left: 60px;
+      padding-right: 20px;
+    }
+  
+    .timeline-item.left,
+    .timeline-item.right {
+      left: 0;
+      text-align: left;
+    }
+  
+    .timeline-item.left .content,
+    .timeline-item.right .content {
+      margin: 0;
+    }
+    .timeline-item.left .circle,
+    .timeline-item.right .circle{
+        left: -8%;
+    }
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .search-container {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    gap: 5px;
+    background: #ffffff;
+  }
+  
+  #search {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  #search-button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  #search-button:hover {
+    background-color: #0056b3;
+  }
+  
+
+.hidden {
+    display: none;
+}
+#no-result {
+    margin-top: 10px;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    display: none; /* Ban đầu ẩn thông báo */
+    }
+  
