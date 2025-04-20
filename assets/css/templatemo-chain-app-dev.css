@@ -641,34 +641,80 @@ header
   color: #4b8ef1;
 }
 
+/* Định dạng submenu */
 .header-area .main-nav .nav li.submenu {
   position: relative;
+  padding-right: 30px;
 }
 
-/* Ẩn mặc định submenu */
+.header-area .main-nav .nav li.submenu:after {
+  font-family: FontAwesome;
+  content: "\f107";
+  font-size: 12px;
+  color: #2a2a2a;
+  position: absolute;
+  right: 18px;
+  top: 12px;
+}
+
+.background-header .main-nav .nav li.submenu:after {
+  color: #2a2a2a;
+}
+
 .header-area .main-nav .nav li.submenu ul {
   position: absolute;
-  top: 100%;
-  left: 0;
-  visibility: hidden;
+  width: 200px;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  top: 50px;
   opacity: 0;
-  transform: translateY(10%);
-  transition: all 0.3s ease;
-  background: #fff;
-  z-index: 999;
-  min-width: 180px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  list-style: none;
-  padding: 0;
+  transform: translateY(+2em);
+  visibility: hidden;
+  z-index: -1;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
 }
-.header-area .main-nav .nav li.submenu.active ul {
+
+.header-area .main-nav .nav li.submenu ul li {
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.header-area .main-nav .nav li.submenu ul li a {
+  opacity: 1;
+  display: block;
+  background: #f7f7f7;
+  color: #2a2a2a!important;
+  padding-left: 20px;
+  height: 40px;
+  line-height: 40px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: relative;
+  font-size: 13px;
+  font-weight: 400;
+  border-bottom: 1px solid #eee;
+}
+
+.header-area .main-nav .nav li.submenu ul li a:hover {
+  background: #fff;
+  color: #4b8ef1!important;
+  padding-left: 25px;
+}
+
+.header-area .main-nav .nav li.submenu ul li a:hover:before {
+  width: 3px;
+}
+
+.header-area .main-nav .nav li.submenu:hover ul {
   visibility: visible;
   opacity: 1;
+  z-index: 1;
   transform: translateY(0%);
   transition-delay: 0s, 0s, 0.3s;
 }
-
-
 
 @media (max-width: 1200px) {
   .header-area .main-nav .nav li {
@@ -972,7 +1018,7 @@ Banner Style
 
 .main-banner .left-content p {
   margin-bottom: 45px;
-  color: #2a2a2a;
+  color: #ffffff;
   font-weight: 400;
 }
 
@@ -1684,7 +1730,7 @@ footer #search button:hover {
 }
 
 .footer-widget p {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .footer-widget p,
@@ -2010,7 +2056,7 @@ responsive
     line-height: 70px;
     font-size: 50px;
     margin-bottom: 20px;
-    color: #000;
+    color: #ffffff;
   }
 
   .main-banner .left-content p {
@@ -2030,7 +2076,7 @@ responsive
     margin-right: 0;
   }
   .main-banner .left-content p {
-    color: #afafaf;
+    color: #000000;
     margin-right: 0;
   }
   .main-banner .left-content .white-button a {
@@ -2262,3 +2308,28 @@ responsive
     padding: 30px;
   }
 }
+
+/* Tạo thanh cuộn */
+    ::-webkit-scrollbar {
+      width: 4px; /* Độ rộng thanh cuộn dọc */
+      height: 4px; /* Độ cao thanh cuộn ngang */
+    }
+
+    /* Định dạng track của thanh cuộn */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 2px; /* Tạo các góc bo tròn nhẹ */
+    }
+
+    /* Định dạng phần thumb (nút cuộn) */
+    ::-webkit-scrollbar-thumb {
+      background-color: #3498db; /* Màu của thanh cuộn */
+      border-radius: 2px; /* Góc bo tròn nhẹ cho thanh cuộn */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng khi hover */
+    }
+
+    /* Thay đổi màu và bóng đổ khi hover vào thanh cuộn */
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #2980b9; /* Màu khi hover */
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); /* Bóng đổ khi hover */
+    }
