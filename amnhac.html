@@ -189,8 +189,8 @@
               <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="row">
                   <div class="col-lg-12">
-                    <h2>Phần Văn học</h2>
-                    <p>Văn học Bình Phước phản ánh chân thực vẻ đẹp thiên nhiên và con người nơi đây, gắn liền với hình ảnh vùng đất bazan trù phú. Các tác phẩm thường khắc họa cuộc sống lao động, chiến đấu và những giá trị văn hóa truyền thống của người dân miền Đông Nam Bộ. Dù còn non trẻ, nền văn học này đang từng bước khẳng định vị trí trong dòng chảy văn học cả nước.</p>
+                    <h2>Phần ÂM NHẠC</h2>
+                    <p>Âm nhạc Bình Phước mang đậm dấu ấn vùng đất biên cương với chất liệu dân ca và âm hưởng hào hùng. Các ca khúc thường ca ngợi vẻ đẹp thiên nhiên, con người và lịch sử đấu tranh kiên cường. Giai điệu mộc mạc, dễ đi vào lòng người, gắn với đời sống cộng đồng các dân tộc. Nhiều bài hát như "Tiếng chày trên sóc Bom Bo" trở thành biểu tượng văn hóa. Âm nhạc nơi đây vừa giữ gìn bản sắc, vừa phát triển theo hướng hiện đại.</p>
                   </div>
                   <div class="col-lg-12">
                     <div class="white-button first-button scroll-to-section">
@@ -215,232 +215,270 @@
   </div>
 
   <!-- TRÌNH PHÁT NHẠC CHÍNH -->
-  <div class="player">
-    <div class="wrapper">
-      <div class="details">
-        <div class="track-art" id="track-art"></div>
-        <div class="now-playing">Đang phát: <span id="track-index">1</span> / <span id="total-tracks">3</span></div>
-        <div class="track-name" id="track-name">Tên bài hát</div>
-        <div class="track-artist" id="track-artist">Ca sĩ</div>
+  <body>
+      <div class="player">
+          <div class="wrapper">
+              <div class="details">
+                  <div class="now-playing">PLAYING x OF y</div>
+                  <div class="track-art"></div>
+                  <div class="track-name">Track Name</div>
+                  <div class="track-artist">Track Artist</div>
+              </div>
+    
+              <div class="slider_container">
+                  <div class="current-time">00:00</div>
+                    <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                    <div class="total-duration">00:00</div>
+              </div>
+    
+              <div class="slider_container">
+                  <i class="fa fa-volume-down"></i>
+                    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                    <i class="fa fa-volume-up"></i>
+              </div>
+    
+              <div class="buttons">
+                  <div class="random-track" onclick="randomTrack()">
+                      <i class="fas fa-random fa-2x" title="random"></i>
+                  </div>
+                  <div class="prev-track" onclick="prevTrack()">
+                        <i class="fa fa-step-backward fa-2x"></i>
+                    </div>
+                    <div class="playpause-track" onclick="playpauseTrack()">
+                        <i class="fa fa-play-circle fa-5x"></i>
+                    </div>
+                    <div class="next-track" onclick="nextTrack()">
+                        <i class="fa fa-step-forward fa-2x"></i>
+                    </div>
+                    <div class="repeat-track" onclick="repeatTrack()">
+                        <i class="fa fa-repeat fa-2x" title="repeat"></i>
+                    </div>
+              </div>
+    
+                <div id="wave">
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                </div>  
+          </div>
       </div>
 
-      <div class="buttons">
-        <div class="random-track" onclick="randomTrack()"><i class="fas fa-random"></i></div>
-        <div class="prev-track" onclick="prevTrack()"><i class="fas fa-step-backward"></i></div>
-        <div class="playpause-track" onclick="playpauseTrack()"><i class="fas fa-play-circle" id="play-icon"></i></div>
-        <div class="next-track" onclick="nextTrack()"><i class="fas fa-step-forward"></i></div>
-        <div class="repeat-track" onclick="repeatTrack()"><i class="fas fa-redo-alt"></i></div>
-      </div>
-
-      <div class="slider_container">
-        <span id="current-time">0:00</span>
-        <input type="range" id="seek_slider" min="0" max="100" value="0" onchange="seekTo()"/>
-        <span id="total-duration">0:00</span>
-      </div>
-
-      <div class="slider_container">
-        <i class="fas fa-volume-down"></i>
-        <input type="range" id="volume_slider" min="0" max="100" value="100" onchange="setVolume()"/>
-        <i class="fas fa-volume-up"></i>
-      </div>
-    </div>
-  </div>
-
-  <!-- DANH SÁCH BÀI HÁT -->
-  <div class="song-list">
-    <div class="song-card" onclick="selectTrack(0)">
-      <img src="https://i.imgur.com/N9Z1b8B.png" alt="Ảnh bài hát" class="song-image">
-      <div class="song-info">
-        <h3>Vì Anh Đâu Có Biết</h3>
-        <p><strong>Tác giả:</strong> Madihu</p>
-        <p><strong>Ý nghĩa:</strong> Ca khúc về nỗi nhớ và sự hối tiếc trong tình yêu.</p>
-        <button class="toggle-lyrics">🎵 Xem lời bài hát</button>
-        <div class="lyrics-box hidden">
-          <p>Vì anh đâu có biết trái tim em đang đau từng phút giây dài...</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="song-card" onclick="selectTrack(1)">
-      <img src="https://i.imgur.com/N9Z1b8B.png" alt="Ảnh bài hát" class="song-image">
-      <div class="song-info">
-        <h3>Vì Anh Đâu Có Biết</h3>
-        <p><strong>Ý nghĩa:</strong> Ca khúc về nỗi nhớ và sự hối tiếc trong tình yêu.</p>
-        <button class="toggle-lyrics">🎵 Xem lời bài hát</button>
-        <div class="lyrics-box hidden">
-          <p>Vì anh đâu có biết trái tim em đang đau từng phút giây dài...</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="song-card" onclick="selectTrack(2)">
-      <img src="https://i.imgur.com/N9Z1b8B.png" alt="Ảnh bài hát" class="song-image">
-      <div class="song-info">
-        <h3>Vì Anh Đâu Có Biết</h3>
-        <p><strong>Ý nghĩa:</strong> Ca khúc về nỗi nhớ và sự hối tiếc trong tình yêu.</p>
-        <button class="toggle-lyrics">🎵 Xem lời bài hát</button>
-        <div class="lyrics-box hidden">
-          <p>Vì anh đâu có biết trái tim em đang đau từng phút giây dài...</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- AUDIO ẨN -->
-  <audio id="audio"></audio>
+<!-- AUDIO ẨN -->
+<audio id="audio"></audio>
 
   <script>
-    const audio = document.getElementById('audio');
-    const trackArt = document.getElementById('track-art');
-    const trackName = document.getElementById('track-name');
-    const trackArtist = document.getElementById('track-artist');
-    const seekSlider = document.getElementById('seek_slider');
-    const volumeSlider = document.getElementById('volume_slider');
-    const currentTimeDisplay = document.getElementById('current-time');
-    const totalDurationDisplay = document.getElementById('total-duration');
-    const playIcon = document.getElementById('play-icon');
-    const trackIndexDisplay = document.getElementById('track-index');
-    const totalTracks = document.getElementById('total-tracks');
+    let now_playing = document.querySelector('.now-playing');
+    let track_art = document.querySelector('.track-art');
+    let track_name = document.querySelector('.track-name');
+    let track_artist = document.querySelector('.track-artist');
 
-    const trackList = [
-      {
-        name: 'Bài hát 1',
-        artist: 'Ca sĩ A',
-        path: 'song1.mp3',
-        image: 'https://via.placeholder.com/200'
-      },
-      {
-        name: 'Bài hát 2',
-        artist: 'Ca sĩ B',
-        path: 'song2.mp3',
-        image: 'https://via.placeholder.com/200/007bff'
-      },
-      {
-        name: 'Bài hát 3',
-        artist: 'Ca sĩ C',
-        path: 'song3.mp3',
-        image: 'https://via.placeholder.com/200/28a745'
-      }
-    ];
+    let playpause_btn = document.querySelector('.playpause-track');
+    let next_btn = document.querySelector('.next-track');
+    let prev_btn = document.querySelector('.prev-track');
 
-    let trackIndex = 0;
+    let seek_slider = document.querySelector('.seek_slider');
+    let volume_slider = document.querySelector('.volume_slider');
+    let curr_time = document.querySelector('.current-time');
+    let total_duration = document.querySelector('.total-duration');
+    let wave = document.getElementById('wave');
+    let randomIcon = document.querySelector('.fa-random');
+    let curr_track = document.createElement('audio');
+
+    let track_index = 0;
     let isPlaying = false;
     let isRandom = false;
-    let isRepeat = false;
     let updateTimer;
 
-    function loadTrack(index) {
-      clearInterval(updateTimer);
-      resetValues();
+    const music_list = [
+        {
+            img : 'https://i.imgur.com/kczSaVY.png',
+            name : 'Tiếng chày trên Sóc Bom Bo',
+            artist : 'Sáng tác: Xuân Hồng - Biểu diễn: Thanh Hằng' ,
+            music : 'tiengcaytrensbb.mp3'
+        },
+        {
+            img : 'https://i.imgur.com/EgcuH2k.jpg',
+            name : 'Bình Phước - Một Khúc Ca Xanh',
+            artist : 'Sáng tác: Võ Đông Điền - Biểu diễn: Ngọc Kiều Oanh',
+            music : 'bp_kcx.mp3'
+        },
+        {
+            img : 'https://i.imgur.com/gZvYIk4.png',
+            name : 'Tự hào Bình Phước của ta',
+            artist : 'Sáng tác: Thắng Liêm, Nguyễn Thái Hiệp - Trình bày: Tốp ca',
+            music : 'tu_hao_bp_cua_ta.mp3'
+        },
+        {
+            img : 'https://i.imgur.com/7Ra6xWQ.jpg',
+            name : 'Hành khúc chiến sĩ biên phòng Bình Phước',
+            artist : 'Sáng tác: Nguyễn Hữu Tịnh - Biểu diễn: Tốp ca',
+            music : 'hk_chien_si_bp.mp3'
+        },
+        {
+            img : 'https://i.imgur.com/BTqdEwg.jpg',
+            name : 'Về với Bù Đăng',
+            artist : 'Sáng tác: Ns Xuân Thùy - Biểu diễn: Trang Dung',
+            music : 've_voi_bd.mp3'
+        },
+        {
+            img : 'https://i.imgur.com/MENb4zS.jpg',
+            name : 'Đồng Xoài thành phố tôi yêu',
+            artist : 'Sáng tác: Y Phôn Kso - Biểu diễn: Minh Hiền',
+            music : 'dongxoaithanhphotoiyeu.mp3'
+        },
+        {
+            img : 'https://i.imgur.com/Dmr6ayB.jpg',
+            name : 'Về Chơn Thành hôm nay',
+            artist : 'Sáng tác:Thiên Tuế - Trình bày:Hoàng Nghiệp & Tốp ca',
+            music : 'vechonthanhhomnay.mp3'
+        },
+        {
+            img : 'https://i.imgur.com/IhiU1Hj.jpg',
+            name : 'Tự hào Chơn Thành',
+            artist : 'Sáng tác: Nhựt Phương - Trình bày: Ca sĩ Nguyễn Phi Hùng, Đam San, Lê Thu Uyên, Leon Anh Tuấn',
+            music : 'tuhaochonthanh.mp3'
+        },
+        {
+            img : 'https://i.imgur.com/Jp4a2Kk.jpg',
+            name : 'Khúc hát ân tình trên hương Bình Phước',
+            artist : 'Sáng tác: Dương Thiên Lý - Trình bày: Thanh Huyền',
+            music : 'khucantinh.mp3'
+        },
+        
+        {
+            img : 'https://i.imgur.com/Zzltq4g.jpg',
+            name : 'Bình Phước lời ca yêu thương',
+            artist : 'Sáng tác: Nguyễn An Đệ - Trình bày: Xuân Thư',
+            music : 'bploica.mp3'
+        },
+        
+        {
+            img : 'https://i.imgur.com/dSaRtKG.jpg',
+            name : 'Hát về Bình Phước quê ta',
+            artist : 'Sáng tác: Ns Nguyễn Hòa - Hòa âm: Ns Hữu Thái - Trình bày: Nhóm Phù Sa',
+            music : 'hatvebinhphuocqueta.mp3'
+        },
+        
+        {
+            img : 'https://i.imgur.com/J1MoWBx.jpg',
+            name : 'Xôn xao chiều Bù Đăng',
+            artist : 'Sáng tác: Võ Đông Điền - Trình bày: Đào Ngọc Sang',
+            music : 'xonxaochieubudang.mp3'
+        },
+        
 
-      const track = trackList[index];
-      audio.src = track.path;
-      trackArt.style.backgroundImage = `url('${track.image}')`;
-      trackName.textContent = track.name;
-      trackArtist.textContent = track.artist;
-      trackIndexDisplay.textContent = index + 1;
-      totalTracks.textContent = trackList.length;
+        
+    ];
 
-      updateTimer = setInterval(seekUpdate, 1000);
-      audio.addEventListener('ended', nextTrack);
+    loadTrack(track_index);
+
+    function loadTrack(track_index){
+        clearInterval(updateTimer);
+        reset();
+
+        curr_track.src = music_list[track_index].music;
+        curr_track.load();
+
+        track_art.style.backgroundImage = "url(" + music_list[track_index].img + ")";
+        track_name.textContent = music_list[track_index].name;
+        track_artist.textContent = music_list[track_index].artist;
+        now_playing.textContent = "Playing music " + (track_index + 1) + " of " + music_list.length;
+
+        updateTimer = setInterval(setUpdate, 1000);
+
+        curr_track.addEventListener('ended', nextTrack);
+        random_bg_color();
     }
-
-    function resetValues() {
-      currentTimeDisplay.textContent = '0:00';
-      totalDurationDisplay.textContent = '0:00';
-      seekSlider.value = 0;
+    function reset(){
+        curr_time.textContent = "00:00";
+        total_duration.textContent = "00:00";
+        seek_slider.value = 0;
     }
-
-    function playTrack() {
-      audio.play();
-      isPlaying = true;
-      playIcon.classList.remove('fa-play-circle');
-      playIcon.classList.add('fa-pause-circle');
+    function randomTrack(){
+        isRandom ? pauseRandom() : playRandom();
     }
-
-    function pauseTrack() {
-      audio.pause();
-      isPlaying = false;
-      playIcon.classList.remove('fa-pause-circle');
-      playIcon.classList.add('fa-play-circle');
+    function playRandom(){
+        isRandom = true;
+        randomIcon.classList.add('randomActive');
     }
-
-    function playpauseTrack() {
-      isPlaying ? pauseTrack() : playTrack();
+    function pauseRandom(){
+        isRandom = false;
+        randomIcon.classList.remove('randomActive');
     }
-
-    function nextTrack() {
-      if (isRandom) {
-        trackIndex = Math.floor(Math.random() * trackList.length);
-      } else {
-        trackIndex = (trackIndex + 1) % trackList.length;
-      }
-      loadTrack(trackIndex);
-      playTrack();
+    function repeatTrack(){
+        let current_index = track_index;
+        loadTrack(current_index);
+        playTrack();
     }
-
-    function prevTrack() {
-      trackIndex = (trackIndex - 1 + trackList.length) % trackList.length;
-      loadTrack(trackIndex);
-      playTrack();
+    function playpauseTrack(){
+        isPlaying ? pauseTrack() : playTrack();
     }
-
-    function repeatTrack() {
-      isRepeat = !isRepeat;
-      audio.loop = isRepeat;
-      alert(isRepeat ? 'Lặp lại: BẬT' : 'Lặp lại: TẮT');
+    function playTrack(){
+        curr_track.play();
+        isPlaying = true;
+        track_art.classList.add('rotate');
+        wave.classList.add('loader');
+        playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
     }
-
-    function randomTrack() {
-      isRandom = !isRandom;
-      alert(isRandom ? 'Ngẫu nhiên: BẬT' : 'Ngẫu nhiên: TẮT');
+    function pauseTrack(){
+        curr_track.pause();
+        isPlaying = false;
+        track_art.classList.remove('rotate');
+        wave.classList.remove('loader');
+        playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
     }
-
-    function seekTo() {
-      let seekto = audio.duration * (seekSlider.value / 100);
-      audio.currentTime = seekto;
+    function nextTrack(){
+        if(track_index < music_list.length - 1 && isRandom === false){
+            track_index += 1;
+        }else if(track_index < music_list.length - 1 && isRandom === true){
+            let random_index = Number.parseInt(Math.random() * music_list.length);
+            track_index = random_index;
+        }else{
+            track_index = 0;
+        }
+        loadTrack(track_index);
+        playTrack();
     }
-
-    function setVolume() {
-      audio.volume = volumeSlider.value / 100;
+    function prevTrack(){
+        if(track_index > 0){
+            track_index -= 1;
+        }else{
+            track_index = music_list.length -1;
+        }
+        loadTrack(track_index);
+        playTrack();
     }
-
-    function seekUpdate() {
-      if (!isNaN(audio.duration)) {
-        let seekPosition = (audio.currentTime / audio.duration) * 100;
-        seekSlider.value = seekPosition;
-
-        let curMinutes = Math.floor(audio.currentTime / 60);
-        let curSeconds = Math.floor(audio.currentTime % 60);
-        let durMinutes = Math.floor(audio.duration / 60);
-        let durSeconds = Math.floor(audio.duration % 60);
-
-        if (curSeconds < 10) curSeconds = "0" + curSeconds;
-        if (durSeconds < 10) durSeconds = "0" + durSeconds;
-        if (curMinutes < 10) curMinutes = "0" + curMinutes;
-        if (durMinutes < 10) durMinutes = "0" + durMinutes;
-
-        currentTimeDisplay.textContent = `${curMinutes}:${curSeconds}`;
-        totalDurationDisplay.textContent = `${durMinutes}:${durSeconds}`;
-      }
+    function seekTo(){
+        let seekto = curr_track.duration * (seek_slider.value / 100);
+        curr_track.currentTime = seekto;
     }
-
-    function selectTrack(index) {
-      trackIndex = index;
-      loadTrack(trackIndex);
-      playTrack();
+    function setVolume(){
+        curr_track.volume = volume_slider.value / 100;
     }
+    function setUpdate(){
+        let seekPosition = 0;
+        if(!isNaN(curr_track.duration)){
+            seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+            seek_slider.value = seekPosition;
 
-    // Tải track đầu tiên khi mở trang
-    loadTrack(trackIndex);
-    
-    document.querySelectorAll('.toggle-lyrics').forEach(button => {
-      button.addEventListener('click', function () {
-        const lyricsBox = this.nextElementSibling;
-        lyricsBox.classList.toggle('hidden');
-        this.textContent = lyricsBox.classList.contains('hidden') ? '🎵 Xem lời bài hát' : '❌ Ẩn lời bài hát';
-      });
-    });
+            let currentMinutes = Math.floor(curr_track.currentTime / 60);
+            let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+            let durationMinutes = Math.floor(curr_track.duration / 60);
+            let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+
+            if(currentSeconds < 10) {currentSeconds = "0" + currentSeconds; }
+            if(durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+            if(currentMinutes < 10) {currentMinutes = "0" + currentMinutes; }
+            if(durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+
+            curr_time.textContent = currentMinutes + ":" + currentSeconds;
+            total_duration.textContent = durationMinutes + ":" + durationSeconds;
+        }
+    }
   </script>
 
 
