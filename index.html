@@ -10,6 +10,131 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
         <title>CTĐP - Study become easy</title>
+        <style>
+          .index * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+          }
+          .index {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+          .index body {
+            margin: 0;
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(to right, #f3f7fa, #eef3f9);
+            color: #333;
+          }
+
+          .index .section {
+            max-width: 960px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+
+          .index .section:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+          }
+
+          .index h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: #004080;
+            margin-bottom: 25px;
+            position: relative;
+          }
+
+          .index h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            margin: 14px auto 0;
+            background: linear-gradient(to right, #007bff, #00c6ff);
+            border-radius: 2px;
+          }
+
+          .index h3 {
+            font-size: 22px;
+            margin-top: 30px;
+            color: #0056b3;
+            font-weight: 600;
+            border-left: 5px solid #00bfff;
+            padding-left: 10px;
+          }
+
+          .index p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 16px 0;
+            color: black;
+          }
+
+          .index ul {
+            padding-left: 20px;
+            margin: 0;
+            list-style: none;
+          }
+
+          .index li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.6;
+            color: #444;
+          }
+
+          .index li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #007bff;
+            font-size: 20px;
+            line-height: 1.6;
+          }
+
+          .section-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+
+          .section {
+            flex: 1 1 calc(50% - 20px);
+            background-color: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+          }
+
+          .section:hover {
+            transform: translateY(-5px);
+          }
+
+          @media (max-width: 768px) {
+            .section {
+              flex: 1 1 100%;
+            }
+            .index {
+              padding-left: 10px;
+              padding-right: 10px;
+            }
+          }
+
+
+        </style>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -189,8 +314,8 @@
               <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="row">
                   <div class="col-lg-12">
-                    <h2>Phần Văn học</h2>
-                    <p>Văn học Bình Phước phản ánh chân thực vẻ đẹp thiên nhiên và con người nơi đây, gắn liền với hình ảnh vùng đất bazan trù phú. Các tác phẩm thường khắc họa cuộc sống lao động, chiến đấu và những giá trị văn hóa truyền thống của người dân miền Đông Nam Bộ. Dù còn non trẻ, nền văn học này đang từng bước khẳng định vị trí trong dòng chảy văn học cả nước.</p>
+                    <h2>CTDP CLICK</h2>
+                    <p>CTDP CLICK là một chương trình được thiết kế với mục đích thúc đẩy sự tham gia của người dân vào các hoạt động hoặc dịch vụ địa phương thông qua các kênh trực tuyến. Cụ thể, "CLICK" trong CTDP CLICK có thể hiểu là việc người dùng thực hiện hành động nhấp chuột (click) vào các liên kết hoặc quảng cáo trực tuyến để tương tác với các dịch vụ, thông tin hoặc sự kiện địa phương.Tóm lại, CTDP CLICK là một chiến lược kết hợp giữa công nghệ, marketing trực tuyến và phát triển cộng đồng địa phương, với mục tiêu khuyến khích sự tham gia của người dân vào các hoạt động và dịch vụ tại địa phương thông qua việc sử dụng các nền tảng trực tuyến.</p>
                   </div>
                   <div class="col-lg-12">
                     <div class="white-button first-button scroll-to-section">
@@ -213,384 +338,93 @@
       </div>
     </div>
   </div>
-
-  <div id="" class="services section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h4>Amazing <em>Services &amp; Features</em> for you</h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>If you need the greatest collection of HTML templates for your business, please visit <a rel="nofollow" href="https://www.toocss.com/" target="_blank">TooCSS</a> Blog. If you need to have a contact form PHP script, go to <a href="https://templatemo.com/contact" target="_parent">our contact page</a> for more information.</p>
-          </div>
-        </div>
-      </div>
+<div class="index">
+  <div class="section-container">
+    <div class="section">
+        <h2>1. 🎯 Mục tiêu</h2>
+        <ul>
+            <li>Nâng cao nhận thức và lòng tự hào về quê hương tỉnh Bình Phước.</li>
+            <li>Cung cấp công cụ học tập và giảng dạy hiệu quả môn Chương trình giáo dục địa phương tỉnh Bình Phước.</li>
+            <li>Giải quyết các vấn đề về công cụ học tập Chương trình giáo dục địa phương.</li>
+            <li>Đưa kiến thức địa phương đến gần hơn với thế hệ trẻ.</li>
+            <li>Lưu giữ kỉ niệm hình ảnh tỉnh Bình Phước tiền xác nhập.</li>
+        </ul>
+        <h2>🧑 Nhóm tác giả:</h2>
+        <ul>
+            <li>Giáo viên hướng dẫn: Nguyễn Thị Vương</li>
+            <li>Trưởng nhóm (Đại diện nhóm tác giả): Nguyễn Hồng Dương</li>
+            <li>Phó nhóm: Hồ Quốc Trung</li>
+            <li>Thành viên: Đào Trần Thành Phước</li>
+            <li>Thành viên: Nguyễn Thạc</li>
+            <li>Thành viên: Phan Hải Hoàng Sơn</li>
+        </ul>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="service-item first-service">
-            <div class="icon"></div>
-            <h4>App Maintenance</h4>
-            <p>You are not allowed to redistribute this template ZIP file on any other website.</p>
-            <div class="text-button">
-              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="service-item second-service">
-            <div class="icon"></div>
-            <h4>Rocket Speed of App</h4>
-            <p>You are allowed to use the CTĐP - Study become easy HTML template. Feel free to modify or edit this layout.</p>
-            <div class="text-button">
-              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="service-item third-service">
-            <div class="icon"></div>
-            <h4>Multi Workflow Idea</h4>
-            <p>If this template is beneficial for your work, please support us <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">a little via PayPal</a>. Thank you.</p>
-            <div class="text-button">
-              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="service-item fourth-service">
-            <div class="icon"></div>
-            <h4>24/7 Help &amp; Support</h4>
-            <p>Lorem ipsum dolor consectetur adipiscing elit sedder williamsburg photo booth quinoa and fashion axe.</p>
-            <div class="text-button">
-              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="" class="the-clients">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading">
-            <h4>Check What <em>The Clients Say</em> About Our App Dev</h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
-          </div>
-        </div>
-        <div class="col-lg-12">
-          <div class="naccs">
-            <div class="grid">
-              <div class="row">
-                <div class="col-lg-7 align-self-center">
-                  <div class="menu">
-                    <div class="first-thumb active">
-                      <div class="thumb">
-                        <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>Giáo viên: Nguyễn Thị Vương</h4>
-                            <span class="date">20 April 2025</span>
-                          </div>
-                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                            <span class="category">Giáo viên TH & THCS Minh Long</span>
-                          </div>
-                          <div class="col-lg-4 col-sm-4 col-12">
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <span class="rating">4.8</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">
-                        <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>Trưởng nhóm: Nguyễn Hồng Dương</h4>
-                            <span class="date">29 November 2021</span>
-                          </div>
-                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                            <span class="category">Digital Business</span>
-                          </div>
-                          <div class="col-lg-4 col-sm-4 col-12">
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <span class="rating">4.5</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">
-                        <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>Đại diện thành viên</h4>
-                            <span class="date">27 November 2021</span>
-                          </div>
-                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                            <span class="category">Business &amp; Economics</span>
-                          </div>
-                          <div class="col-lg-4 col-sm-4 col-12">
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <span class="rating">4.7</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">
-                        <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>???</h4>
-                            <span class="date">24 November 2021</span>
-                          </div>
-                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                            <span class="category">New App Ecosystem</span>
-                          </div>
-                          <div class="col-lg-4 col-sm-4 col-12">
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <span class="rating">3.9</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="last-thumb">
-                      <div class="thumb">
-                        <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>???????</h4>
-                            <span class="date">21 November 2021</span>
-                          </div>
-                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                            <span class="category">Web Development</span>
-                          </div>
-                          <div class="col-lg-4 col-sm-4 col-12">
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <span class="rating">4.3</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> 
-                <div class="col-lg-5">
-                  <ul class="nacc">
-                    <li class="active">
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan
-                                  lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”</p>
-                              </div>
-                              <div class="down-content">
-                                <img src="assets/images/client-image.jpg" alt="">
-                                <div class="right-content">
-                                  <h4>David Martino</h4>
-                                  <span>CEO of David Company</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
-                                <p>“CTO, Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan
-                                  lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”</p>
-                              </div>
-                              <div class="down-content">
-                                <img src="assets/images/client-image.jpg" alt="">
-                                <div class="right-content">
-                                  <h4>Jake H. Nyo</h4>
-                                  <span>CTO of Digital Company</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
-                                <p>“May, Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan
-                                  lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”</p>
-                              </div>
-                              <div class="down-content">
-                                <img src="assets/images/client-image.jpg" alt="">
-                                <div class="right-content">
-                                  <h4>May C.</h4>
-                                  <span>Founder of Catherina Co.</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan
-                                  lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”</p>
-                              </div>
-                              <div class="down-content">
-                                <img src="assets/images/client-image.jpg" alt="">
-                                <div class="right-content">
-                                  <h4>Random Staff</h4>
-                                  <span>Manager, Digital Company</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
-                                <p>“Mark, Lorem ipsum dolor sit amet, consectetur adpiscing elit, sed do eismod tempor idunte ut labore et dolore magna aliqua darwin kengan
-                                  lorem ipsum dolor sit amet, consectetur picing elit massive big blasta.”</p>
-                              </div>
-                              <div class="down-content">
-                                <img src="assets/images/client-image.jpg" alt="">
-                                <div class="right-content">
-                                  <h4>Mark Am</h4>
-                                  <span>CTO, Amber Do Company</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>          
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="section">
+        <h2>2. Nội dung đề tài/ mô hình/ sản phẩm</h2>
+        <h3>a) 🌟 Tính mới</h3>
+        <ul>
+            <li>Lần đầu tiên xây dựng một trang web riêng biệt dành cho Chương trình giáo dục địa phương tỉnh Bình Phước...</li>
+            <li>Nội dung được chia thành nhiều chuyên mục rõ ràng...</li>
+            <li>Tích hợp đa phương tiện...</li>
+            <li>Có tính năng timeline lịch sử địa phương...</li>
+            <li>Thiết kế hiện đại, tương thích đa thiết bị...</li>
+        </ul>
+
+        <h3>b) 💡 Tính sáng tạo</h3>
+        <ul>
+            <li>Ý tưởng xuất phát từ nhu cầu học sinh...</li>
+            <li>Sử dụng mã nguồn mở và tự học công nghệ...</li>
+            <li>Sáng tạo trong cách thể hiện nội dung...</li>
+            <li>Kết nối kỷ niệm – giữ hồn quê qua công nghệ...</li>
+        </ul>
+
+        <h3>c) ⚙ Mô tả cấu trúc, nguyên lý hoạt động</h3>
+        <p><strong>Cách truy cập:</strong></p>
+        <ul>
+            <li>Cách 1: <a href="https://ctdp.netlify.app/">Truy cập bằng liên kết</a></li>
+            <li>Cách 2: Truy cập bằng mã QR</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>d) Khả năng áp dụng</h2>
+        <ul>
+            <li>Áp dụng thực tế trong trường học...</li>
+            <li>Tương thích với nhiều thiết bị...</li>
+            <li>Dễ bảo trì, cập nhật và mở rộng...</li>
+            <li>Mô hình có thể nhân rộng...</li>
+            <li>Chi phí thấp – không cần thiết bị đặc biệt...</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>e) 🌱 Tính bền vững</h2>
+        <ul>Đóng góp cho tăng trưởng bền vững, tận dụng công nghệ xanh, chi phí thấp, sử dụng mã nguồn mở, giúp lan tỏa giáo dục địa phương một cách thân thiện với môi trường.<ul>
+    </div>
+
+    <div class="section">
+        <h2>f) 📈 Đánh giá kết quả, hiệu quả</h2>
+        <ul>
+            <li><strong>Về số lượng:</strong> hơn 50 học sinh trải nghiệm thử nghiệm, 90% đánh giá tích cực.</li>
+            <li><strong>Về chất lượng:</strong> nội dung sát chương trình, giao diện dễ dùng, tương thích đa thiết bị.</li>
+            <li><strong>Về hiệu quả học tập:</strong> học sinh hứng thú, ghi nhớ lâu, giáo viên tiết kiệm thời gian dạy.</li>
+        </ul>
+    </div>
+    <div class="section">
+      <h2>g) Đối tượng hưởng lợi</h2>
+        <h3>🔸 Nhóm đối tượng hưởng lợi chính:</h3>
+        <ul>
+            <li>Học sinh TH&THCS, THCS và THPT trên địa bàn tỉnh Bình Phước (cả nam và nữ)</li>
+            <li>Giáo viên giảng dạy các bộ môn liên quan</li>
+            <li>Cộng đồng: phụ huynh, người yêu thích tìm hiểu tỉnh Bình Phước.</li>
+            <li>Nhóm tác giả</li>
+        </ul>
       </div>
     </div>
   </div>
 
-  <div id="" class="pricing-tables">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading">
-            <h4>We Have The Best Pre-Order <em>Prices</em> You Can Get</h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="pricing-item-regular">
-            <span class="price">$12</span>
-            <h4>Standard Plan App</h4>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="">
-            </div>
-            <ul>
-              <li>Lorem Ipsum Dolores</li>
-              <li>20 TB of Storage</li>
-              <li class="non-function">Life-time Support</li>
-              <li class="non-function">Premium Add-Ons</li>
-              <li class="non-function">Fastest Network</li>
-              <li class="non-function">More Options</li>
-            </ul>
-            <div class="border-button">
-              <a href="#">Purchase This Plan Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="pricing-item-pro">
-            <span class="price">$25</span>
-            <h4>Business Plan App</h4>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="">
-            </div>
-            <ul>
-              <li>Lorem Ipsum Dolores</li>
-              <li>50 TB of Storage</li>
-              <li>Life-time Support</li>
-              <li>Premium Add-Ons</li>
-              <li class="non-function">Fastest Network</li>
-              <li class="non-function">More Options</li>
-            </ul>
-            <div class="border-button">
-              <a href="#">Purchase This Plan Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="pricing-item-regular">
-            <span class="price">$66</span>
-            <h4>Premium Plan App</h4>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="">
-            </div>
-            <ul>
-              <li>Lorem Ipsum Dolores</li>
-              <li>120 TB of Storage</li>
-              <li>Life-time Support</li>
-              <li>Premium Add-Ons</li>
-              <li>Fastest Network</li>
-              <li>More Options</li>
-            </ul>
-            <div class="border-button">
-              <a href="#">Purchase This Plan Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> 
-
+  
   <footer id="newsletter">
     <div class="container">
         <div class="row">
